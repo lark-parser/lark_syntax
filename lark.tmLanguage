@@ -8,12 +8,6 @@
 		<string>lark</string>
 		<string>lr</string>
 	</array>
-	<key>foldingStartMarker</key>
-	<string>\(\*</string>
-	<key>foldingStopMarker</key>
-	<string>\*\)</string>
-	<key>keyEquivalent</key>
-	<string>^~E</string>
 	<key>name</key>
 	<string>Lark grammar</string>
 	<key>patterns</key>
@@ -24,23 +18,33 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\s*(\?|!)?(\b(?:\w|\s|[\-_0-9.])+\b)\s*(:)</string>
+			<string>\s*(\?|!)?(\b(?:\w|\s|[\-_0-9])+\b)((\.)(\d+))?\s*(:)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.operator.other.ebnf</string>
+					<string>keyword.operator.other.lark</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.ebnf</string>
+					<string>entity.name.function.lark</string>
 				</dict>
-				<key>3</key>
+				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.operator.definition.ebnf</string>
+					<string>keyword.operator.priority.lark</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.integer.lark</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.definition.lark</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -48,7 +52,7 @@
 			<key>endCaptures</key>
 			<dict></dict>
 			<key>name</key>
-			<string>meta.syntax-rule.ebnf</string>
+			<string>meta.syntax-rule.lark</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -69,7 +73,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.operator.alternative.ebnf</string>
+					<string>keyword.operator.alternative.lark</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -77,7 +81,7 @@
 			<key>endCaptures</key>
 			<dict></dict>
 			<key>name</key>
-			<string>meta.syntax-rule-alternative.ebnf</string>
+			<string>meta.syntax-rule-alternative.lark</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -98,7 +102,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.ebnf</string>
+					<string>keyword.control.lark</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -106,7 +110,7 @@
 			<key>endCaptures</key>
 			<dict></dict>
 			<key>name</key>
-			<string>meta.ignore.ebnf</string>
+			<string>meta.ignore.lark</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -127,7 +131,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.import.ebnf</string>
+					<string>keyword.control.import.lark</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -135,7 +139,7 @@
 			<key>endCaptures</key>
 			<dict></dict>
 			<key>name</key>
-			<string>meta.import.ebnf</string>
+			<string>meta.import.lark</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -158,60 +162,28 @@
 			<key>end</key>
 			<string>(?=\n)</string>
 			<key>name</key>
-			<string>comment.line.ebnf</string>
-		</dict>
-		<key>double-quote-string</key>
-		<dict>
-			<key>begin</key>
-			<string>"</string>
-			<key>end</key>
-			<string>"</string>
-			<key>name</key>
-			<string>string.quoted.double.ebnf</string>
-		</dict>
-		<key>group</key>
-		<dict>
-			<key>begin</key>
-			<string>\(</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.other.group.begin.ebnf</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>\)</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.other.group.end.ebnf</string>
-				</dict>
-			</dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#subrules</string>
-				</dict>
-			</array>
+			<string>comment.line.lark</string>
 		</dict>
 		<key>invalid</key>
 		<dict>
 			<key>match</key>
 			<string>\(\s*[*:/]\s*\)</string>
 			<key>name</key>
-			<string>invalid.illegal.ebnf</string>
+			<string>invalid.illegal.lark</string>
 		</dict>
 		<key>non-terminal</key>
 		<dict>
 			<key>match</key>
-			<string>\w[\w\-_0-9]*\w</string>
+			<string>[a-z_]+</string>
 			<key>name</key>
-			<string>variable.other.non-terminal.ebnf</string>
+			<string>variable.other.non-terminal.lark</string>
+		</dict>
+		<key>terminal</key>
+		<dict>
+			<key>match</key>
+			<string>[A-Z_]+</string>
+			<key>name</key>
+			<string>variable.other.terminal.lark</string>
 		</dict>
 		<key>operator</key>
 		<dict>
@@ -219,19 +191,15 @@
 			<array>
 				<dict>
 					<key>include</key>
+					<string>#operator-literal-range`</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#operator-alternative</string>
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#operator-concatenation</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#operator-arrow</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#operator-exception</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -247,75 +215,68 @@
 				</dict>
 			</array>
 		</dict>
+		<key>operator-literal-range</key>
+		<dict>
+			<key>match</key>
+			<string>\.\.</string>
+			<key>name</key>
+			<string>keyword.operator.range.lark</string>
+		</dict>
 		<key>operator-alternative</key>
 		<dict>
 			<key>match</key>
 			<string>\|</string>
 			<key>name</key>
-			<string>keyword.operator.alternative.ebnf</string>
-		</dict>
-		<key>operator-concatenation</key>
-		<dict>
-			<key>match</key>
-			<string>,</string>
-			<key>name</key>
-			<string>keyword.operator.concatenation.ebnf</string>
+			<string>keyword.operator.alternative.lark</string>
 		</dict>
 		<key>operator-arrow</key>
 		<dict>
 			<key>match</key>
 			<string>-&gt;</string>
 			<key>name</key>
-			<string>keyword.operator.alias.ebnf</string>
-		</dict>
-		<key>operator-exception</key>
-		<dict>
-			<key>match</key>
-			<string>-</string>
-			<key>name</key>
-			<string>keyword.operator.exception.ebnf</string>
+			<string>keyword.operator.alias.lark</string>
 		</dict>
 		<key>operator-zero-or-more</key>
 		<dict>
 			<key>match</key>
 			<string>\*</string>
 			<key>name</key>
-			<string>keyword.operator.zero-or-more.ebnf</string>
+			<string>keyword.operator.zero-or-more.lark</string>
 		</dict>
 		<key>operator-one-or-more</key>
 		<dict>
 			<key>match</key>
 			<string>\+</string>
 			<key>name</key>
-			<string>keyword.operator.one-or-more.ebnf</string>
+			<string>keyword.operator.one-or-more.lark</string>
 		</dict>
 		<key>operator-optional</key>
 		<dict>
 			<key>match</key>
 			<string>\?</string>
 			<key>name</key>
-			<string>keyword.operator.optional.ebnf</string>
+			<string>keyword.operator.optional.lark</string>
 		</dict>
-		<key>optional</key>
+		<key>group</key>
 		<dict>
 			<key>begin</key>
-			<string>\[</string>
+			<string>\(</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.optional.begin.ebnf</string>
+					<string>keyword.other.group.begin.lark</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\]</string>
+			<string>\)</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.optional.end.ebnf</string>
+					<string>keyword.other.group.end.lark</string>
 				</dict>
 			</dict>
 			<key>patterns</key>
@@ -326,26 +287,26 @@
 				</dict>
 			</array>
 		</dict>
-		<key>repetition</key>
+		<key>optional-group</key>
 		<dict>
 			<key>begin</key>
-			<string>{</string>
+			<string>\[</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.repetition.begin.ebnf</string>
+					<string>keyword.other.optional.begin.lark</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>}</string>
+			<string>\]</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.repetition.end.ebnf</string>
+					<string>keyword.other.optional.end.lark</string>
 				</dict>
 			</dict>
 			<key>patterns</key>
@@ -358,30 +319,31 @@
 		</dict>
 		<key>repetition-numbered</key>
 		<dict>
+			<key>match</key>
+			<string>(~)\s*(\d+)\s*((\.\.)\s*(\d+))?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>constant.numeric.integer.ebnf</string>
+					<string>keyword.operator.quantifier.lark</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.operator.repetition.ebnf</string>
+					<string>constant.numeric.integer.lark</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.quantifier.lark</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.integer.lark</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>(\d+)\s*(\*)</string>
-		</dict>
-		<key>single-quote-string</key>
-		<dict>
-			<key>begin</key>
-			<string>'</string>
-			<key>end</key>
-			<string>'</string>
-			<key>name</key>
-			<string>string.quoted.single.ebnf</string>
 		</dict>
 		<key>regex-string</key>
 		<dict>
@@ -392,22 +354,22 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>string.quoted.single.ebnf</string>
+					<string>string.quoted.other.lark</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?&lt;!\\|/)(/)(?!/)([cegimosx]*)</string>
+			<string>(?&lt;!\\|/)(/)(?!/)([imslux]*)</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>string.quoted.single.ebnf</string>
+					<string>string.quoted.other.lark</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.regexp-option.ebnf</string>
+					<string>keyword.control.regexp-option.lark</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -420,6 +382,40 @@
 				</dict>
 			</array>
 		</dict>
+		<key>single-quote-string</key>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>end</key>
+			<string>'(i?)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.regexp-option.lark</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.lark</string>
+		</dict>
+		<key>double-quote-string</key>
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>end</key>
+			<string>"(i?)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.regexp-option.lark</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.double.lark</string>
+		</dict>
 		<key>subrules</key>
 		<dict>
 			<key>patterns</key>
@@ -430,11 +426,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#optional</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#repetition</string>
+					<string>#optional-group</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -447,6 +439,10 @@
 				<dict>
 					<key>include</key>
 					<string>#non-terminal</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#terminal</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -468,8 +464,8 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>source.ebnf</string>
+	<string>source.lark</string>
 	<key>uuid</key>
-	<string>D9954069-097B-4361-818D-EF4986D442E7</string>
+	<string>600B8144-8839-497F-B5A9-A130CAC61159</string>
 </dict>
 </plist>
