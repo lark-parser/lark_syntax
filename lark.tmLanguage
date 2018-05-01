@@ -191,7 +191,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#operator-literal-range`</string>
+					<string>#operator-literal-range</string>
 				</dict>
 				<dict>
 					<key>include</key>
