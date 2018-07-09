@@ -384,12 +384,12 @@
 		<key>single-quote-string</key>
 		<dict>
 			<key>begin</key>
-			<string>'</string>
+			<string>(?&lt;!\\)(?:\\\\)*(')</string>
 			<key>end</key>
-			<string>'(i?)</string>
+			<string>(?&lt;!\\)(?:\\\\)*(')(i?)</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>1</key>
+				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.control.regexp-option.lark</string>
@@ -401,12 +401,12 @@
 		<key>double-quote-string</key>
 		<dict>
 			<key>begin</key>
-			<string>"</string>
+			<string>(?&lt;!\\)(?:\\\\)*(")</string>
 			<key>end</key>
-			<string>"(i?)</string>
+			<string>(?&lt;!\\)(?:\\\\)*(")(i?)</string>
 			<key>endCaptures</key>
 			<dict>
-				<key>1</key>
+				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.control.regexp-option.lark</string>
