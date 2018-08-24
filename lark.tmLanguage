@@ -346,7 +346,7 @@
 		<key>regex-string</key>
 		<dict>
 			<key>begin</key>
-			<string>(?&lt;!\\|/)/(?!/)</string>
+			<string>(?&lt;!\\)(?&gt;\\\\)*/(?!/)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -356,7 +356,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?&lt;!\\|/)(/)(?!/)([imslux]*)</string>
+			<string>(?&lt;!\\)(?&gt;\\\\)*(/)(?!/)([imslux]*)</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
