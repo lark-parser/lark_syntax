@@ -94,7 +94,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>%ignore</string>
+			<string>%ignore|%declare</string>
 			<key>captures</key>
 			<dict>
 				<key>0</key>
