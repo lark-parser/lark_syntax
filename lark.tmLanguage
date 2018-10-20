@@ -16,7 +16,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\s*(\?|!)?(\b(?:\w|\s|[\-_0-9])+\b)((\.)(\d+))?\s*(:)</string>
+			<string>[ \t]*(\?|!)?(\b(?:\w|[ \t]|[\-_0-9])+\b)((\.)(\d+))?[ \t]*(:)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -65,7 +65,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\s*(\|)</string>
+			<string>[ \t]*(\|)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -165,7 +165,7 @@
 		<key>invalid</key>
 		<dict>
 			<key>match</key>
-			<string>\(\s*[*:/]\s*\)</string>
+			<string>\([ \t]*[*:/][ \t]*\)</string>
 			<key>name</key>
 			<string>invalid.illegal.lark</string>
 		</dict>
@@ -318,7 +318,7 @@
 		<key>repetition-numbered</key>
 		<dict>
 			<key>match</key>
-			<string>(~)\s*(\d+)\s*((\.\.)\s*(\d+))?</string>
+			<string>(~)[ \t]*(\d+)[ \t]*((\.\.)[ \t]*(\d+))?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
