@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>source</key>
+	<dict>
+		<key>method</key>
+		<string>git</string>
+		<key>url</key>
+		<string>git@github.com:lark/lark_syntax</string>
+	</dict>
+	<key>contactEmailRot13</key>
+	<string></string>
+	<key>contactName</key>
+	<string>Daniel Mouritzen</string>
+	<key>description</key>
+	<string>Lark is a parsing toolkit for Python, built with a focus on ergonomics, performance and modularity.</string>
+	<key>name</key>
+	<string>Lark</string>
+	<key>uuid</key>
+	<string>10C2A2CF-568B-42DA-9351-F8748FE290C4</string>
+</dict>
+</plist>
