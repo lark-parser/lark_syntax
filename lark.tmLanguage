@@ -16,7 +16,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>[ \t]*(\?|!)?(\b(?:\w|[ \t]|[\-_0-9])+\b)((\.)(\d+))?[ \t]*(:)</string>
+			<string>[ \t]*(\?|!)?(\b(?:\w|[ \t]|[\-_0-9])+\b)((\.)([+-]?\d+))?[ \t]*(:)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
