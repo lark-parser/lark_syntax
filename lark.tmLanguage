@@ -156,7 +156,7 @@
 		<key>comment</key>
 		<dict>
 			<key>begin</key>
-			<string>//[^\n]*</string>
+			<string>(#|//)[^\n]*</string>
 			<key>end</key>
 			<string>(?=\n)</string>
 			<key>name</key>
